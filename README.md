@@ -6,7 +6,7 @@ This project builds and evaluates a systematic delta-neutral carry strategy on B
 
 **VIX regime is the dominant performance variable.** Low-VIX periods (VIX ≤ 25, 78% of the sample) deliver a Sharpe of 1.017. High-VIX periods (VIX > 25) flip the strategy to a Sharpe of -2.174 with -253 bps/yr. The mechanism: macro stress compresses crypto funding rates while the strategy still incurs turnover costs, producing a negative net P&L. Win rate drops from 63% to 50% — indistinguishable from random.
 
-**Execution cost is the binding constraint.** At 3 bps/side (institutional with smart order routing), Sharpe is 4.25. At 5 bps/side (default), Sharpe is 0.37. At 7 bps/side (retail taker), Sharpe is -2.19. The breakeven spread is approximately 5.2 bps/side. This is a spread capture trade — the edge is in execution, not the signal.
+**Execution cost is the binding constraint.** The full-sample P&L attribution is +6,112 bps gross funding income, -5,955 bps cost drag, +129 bps basis mark-to-market — costs consume 97% of gross income, leaving 286 bps net over 6.2 years. This reframes the strategy: carry generates a real, persistent income stream that is almost entirely absorbed by friction. At 3 bps/side (institutional with smart order routing), Sharpe is 4.25. At 5 bps/side (default), Sharpe is 0.37. At 7 bps/side (retail taker), Sharpe is -2.19. The breakeven spread is approximately 5.2 bps/side. This is a spread capture trade — the edge is in execution, not the signal.
 
 **On-chain inflows contain no exploitable information at 8-hour resolution.** BTC, ETH, and USDT hourly exchange inflows were tested as leading indicators of funding rate changes across pooled, per-asset, and pre/post-2021 scopes with lags from 8 to 192 hours. All p-values exceed 0.20. Overlay ΔSharpe = 0.000. This is consistent with Chi, Chu, and Hao (2024) and implies that on-chain flow information is incorporated into perpetual futures pricing faster than the 8-hour settlement cycle.
 
@@ -80,7 +80,7 @@ Viable at ≤ 3 bps (institutional). Unprofitable at ≥ 7 bps (retail). Breakev
 |---|---|---|---|---|
 | **Sharpe** | -5.68 | 0.370 | 0.481 | 0.983 |
 
-Higher thresholds improve Sharpe by restricting entry to periods with strongly positive funding, reducing churn and cost drag. Full sweep with 7 threshold levels in `output/threshold_sweep.csv`.
+Sharpe improves monotonically from -5.68 at 0.00% to 0.983 at 0.05% — higher thresholds improve risk-adjusted returns by restricting entry to high-conviction periods and reducing turnover-driven cost drag, but at the cost of being invested far less of the time. The trade-off between selectivity and opportunity cost is the central calibration challenge for this strategy. Full sweep with 7 threshold levels in `output/threshold_sweep.csv`.
 
 ### On-Chain Overlay
 
