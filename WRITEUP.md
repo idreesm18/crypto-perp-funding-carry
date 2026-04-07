@@ -10,9 +10,9 @@ The on-chain hypothesis: large inflows onto exchange addresses signal impending 
 
 BTCUSDT and ETHUSDT perpetuals on Binance, January 2020 through March 2026, 6,846 eight-hour funding periods per asset. Funding rates, spot klines, and perp klines from Binance public bulk downloads (data.binance.vision). VIX daily closes from FRED. On-chain exchange inflows at hourly resolution from Dune Analytics curated tables.
 
-The carry signal enters when the 8-hour funding rate exceeds 0.01%. The position is designed to be delta-neutral -- long spot and short equal notional of the perpetual -- so price exposure nets to zero and funding income is the sole intended P&L source. The backtest models this via funding income and basis mark-to-market components rather than explicitly simulating two-leg margin accounts; basis P&L totaling +129 bps over the sample confirms the approximation holds in practice. Position sizing is inverse 30-day realized volatility, normalized across assets. The cost model applies a fixed half-spread to both legs per unit of turnover, defaulting to 5 bps per side. P&L decomposes into funding income, cost drag, and basis mark-to-market each period.
+The carry signal enters when the 8-hour funding rate exceeds 0.01%. The position is designed to be delta-neutral (long spot and short equal notional of the perpetual) so price exposure is intended to net to zero and funding income is the sole intended P&L source. The backtest models this via funding income and basis mark-to-market components rather than explicitly simulating two-leg margin accounts. Position sizing is inverse 30-day realized volatility, normalized across assets. The cost model applies a fixed half-spread to both legs per unit of turnover, defaulting to 5 bps per side. P&L decomposes into funding income, cost drag, and basis mark-to-market each period.
 
-Regime analysis uses two cuts: a structural break at January 1, 2021, following Kroner, Mohammed, and Vega's identification of a shift in crypto-macro sensitivity coinciding with institutional entry, and a VIX threshold at 25.
+Regime analysis is done along two lines: a structural break at January 1, 2021, following Kroner, Mohammed, and Vega's identification of a shift in crypto-macro sensitivity coinciding with institutional entry, and a VIX threshold at 25.
 
 ## Results
 

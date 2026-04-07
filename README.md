@@ -25,7 +25,7 @@ A systematic delta-neutral carry strategy on BTC and ETH perpetual futures (Bina
 - **Universe:** BTCUSDT, ETHUSDT perpetual futures on Binance
 - **Entry signal:** Funding rate > 0.01% per 8-hour settlement period
 - **Position sizing:** Inverse 30-day realized volatility, normalized so active weights sum to 1. Scales down in high-vol, up in low-vol
-- **Delta-neutrality:** The strategy holds equal notional in spot (long) and the perpetual (short), so spot price moves cancel across legs. The backtest models this by computing funding income and basis mark-to-market rather than tracking two separate accounts. Margin requirements and liquidation risk on the short perp leg are not modeled -- a known simplification standard in strategy research.
+- **Delta-neutrality:** The strategy holds equal notional in spot (long) and the perpetual (short), so spot price moves are intended to cancel across legs. The backtest models this by computing funding income and basis mark-to-market rather than tracking two separate accounts. Margin requirements and liquidation risk on the short perp leg are not modeled for simplicitly.
 - **Rebalance frequency:** Every 8 hours at funding settlement
 - **Cost model:** Fixed half-spread on both legs per unit of turnover. Cost = turnover x 2 x spread / 10,000. Default: 5 bps/side
 
