@@ -8,7 +8,7 @@ A systematic delta-neutral carry strategy on BTC and ETH perpetual futures (Bina
 
 **Gross funding income is real; friction is what kills it.** Full-sample P&L attribution: +6,112 bps funding income, -5,955 bps cost drag, +129 bps basis mark-to-market, 286 bps net. Costs absorb 97% of gross income. At 3 bps/side, Sharpe is 4.25. At 5 bps (default), 0.37. At 7 bps (retail taker), -2.19. Breakeven is approximately 5.2 bps/side. Premium is persistent, but execution quality determines whether it's capturable.
 
-**On-chain inflows contain no exploitable information at 8-hour resolution.** BTC, ETH, and USDT hourly exchange inflows tested across pooled, per-asset, and pre/post-2021 scopes with lags from 8 to 192 hours. All p-values exceed 0.20. Overlay ΔSharpe = 0.000. No detectable lead-lag relationship was found at 8-hour resolution. See Chi, Chu, and Hao (2024) for consistent findings on spot returns.
+**On-chain inflows at 8-hour resolution did not improve results.** BTC, ETH, and USDT hourly exchange inflows tested across pooled, per-asset, and pre/post-2021 scopes with lags from 8 to 192 hours. All p-values exceed 0.20. Overlay ΔSharpe = 0.000. No detectable lead-lag relationship was found at 8-hour resolution. See Chi, Chu, and Hao (2024) for consistent findings on spot returns.
 
 ## Methodology
 
