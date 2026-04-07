@@ -1,0 +1,9 @@
+# .gitignore for carry_project
+data/
+*.parquet
+# allow output/ CSVs (results tables) — exclude raw data CSVs only
+data/*.csv
+.DS_Store
+__pycache__/
+*.pyc
+.env
